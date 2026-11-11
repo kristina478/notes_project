@@ -1,0 +1,5 @@
+body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; }
+header a { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: #222; }
+.note { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin: 12px 0; }
+.note.done h2 { text-decoration: line-through; color: #888; }
+.btn { display: inline-block; margin: 12px 0; }

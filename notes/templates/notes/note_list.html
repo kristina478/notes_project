@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+    <a class="btn" href="{% url 'notes:create' %}">+ Новая заметка</a>
+    {% for note in notes %}
+        <article class="note {% if note.is_done %}done{% endif %}">
+            <h2>{{ note.title }}</h2>
+            <p>{{ note.text|linebreaksbr }}</p>
+            <small>{{ note.created_at|date:"d.m.Y H:i" }}</small>
+            <a href="{% url 'notes:update' note.pk %}">Изменить</a>
+            <a href="{% url 'notes:delete' note.pk %}">Удалить</a>
+        </article>
+    {% empty %}
+        <p>Заметок пока нет.</p>
+    {% endfor %}
+{% endblock %}
